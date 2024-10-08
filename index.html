@@ -7,12 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-</body>
-</html>
-
-<body>
-    <header>
+<header>
         <h1>Relatório das redes sociais</h1>
         <nav>
             <a href="index.html">Mundo</a>
@@ -21,10 +16,25 @@
     </header>
     <main class="graficos-section">
         <section id="graficos-container" class="graficos-container">
-            <!-- crie os gráficos aqui -->
-        </section>
+            async function vizualizarInformacoesGlobais() {
+                const res = await fetch(url)
+                const dados = await res.json()
+                cosole.log(dados);
+                const paragrafo = document.createElement('p')
+                paragrafo.classList.add('graficos-container__texto')
+                paragrafo.innerHTML = `Você sabia que o mundo tem ${dados.total_pessoas_mundo} de pessoas e que aproximadamente ${dados.total_pessoas_conectadas} estão conectadas em alguma rede social e passam em média ${dados.tempo_medio} horas conectadas.`
+                
+                const container = document.getElementById(‘graficos-container’)
+                container.appendChild(paragrafo)
+              }
+              
+              vizualizarInformacoesGlobais()
     </main>
     <footer>
         <p>Desenvolvido por Meninas</p>
     </footer>
+    <script type="module" src="informacoesGlobais.js"></script>
 </body>
+</html>
+
+
