@@ -16,25 +16,22 @@
     </header>
     <main class="graficos-section">
         <section id="graficos-container" class="graficos-container">
-            async function vizualizarInformacoesGlobais() {
-                const res = await fetch(url)
-                const dados = await res.json()
-                cosole.log(dados);
-                const paragrafo = document.createElement('p')
-                paragrafo.classList.add('graficos-container__texto')
-                paragrafo.innerHTML = `Você sabia que o mundo tem ${dados.total_pessoas_mundo} de pessoas e que aproximadamente ${dados.total_pessoas_conectadas} estão conectadas em alguma rede social e passam em média ${dados.tempo_medio} horas conectadas.`
-                
-                const container = document.getElementById(‘graficos-container’)
-                container.appendChild(paragrafo)
-              }
-              
-              vizualizarInformacoesGlobais()
+           
     </main>
     <footer>
         <p>Desenvolvido por Meninas</p>
     </footer>
     <script type="module" src="informacoesGlobais.js"></script>
+    <script type="module" src="graficos/quantidadeUsuarios.js"></script>
+    <script type="module" src="graficos/objetivosUsuarios.js"></script>
 </body>
 </html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redes Sociais</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js" charset="utf-8"></script>
+  </head>
 
 
